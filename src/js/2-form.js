@@ -40,7 +40,7 @@ try {
   form.elements.email.value = formData.email;
   form.elements.message.value = formData.message;
 } catch {
-  console.log('Error parsing saved data');
+  console.log('No saved data');
 }
 
 const labels = form.querySelectorAll('label');

@@ -1,3 +1,6 @@
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
+
 const images = [
   {
     preview:
@@ -93,8 +96,9 @@ function handleClick(event) {
   if (event.currentTarget === event.target) return;
 
   const clickedItem = event.target.closest('.gallery-image');
-
-  const imageSource = clickedItem.dataset.source;
-
-  const image = images.find(({ original }) => original === imageSource);
 }
+
+const lightbox = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionDelay: 250,
+});

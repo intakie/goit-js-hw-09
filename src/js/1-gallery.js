@@ -88,16 +88,6 @@ function createMarkup(arr) {
 
 gallery.insertAdjacentHTML('beforeend', createMarkup(images));
 
-gallery.addEventListener('click', handleClick);
-
-function handleClick(event) {
-  event.preventDefault();
-
-  if (event.currentTarget === event.target) return;
-
-  const clickedItem = event.target.closest('.gallery-image');
-}
-
 const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 250,

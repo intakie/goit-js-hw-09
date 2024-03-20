@@ -14,8 +14,8 @@ function handleSubmit(event) {
 
   if (formData.email !== '' && formData.message !== '') {
     console.log(formData);
-    const data = JSON.stringify(formData);
-    localStorage.setItem(storageKey, data);
+
+    localStorage.removeItem(storageKey);
 
     form.reset();
   } else {

@@ -4,6 +4,16 @@ const storageKey = 'feedback-form-state';
 form.addEventListener('submit', handleSubmit);
 form.addEventListener('input', handleInput);
 
+function handleInput(event) {
+  const formData = {
+    email: form.elements.email.value.trim(),
+    message: form.elements.message.value.trim(),
+  };
+
+  const data = JSON.stringify(formData);
+  localStorage.setItem(storageKey, data);
+}
+
 function handleSubmit(event) {
   event.preventDefault();
 
@@ -21,16 +31,6 @@ function handleSubmit(event) {
   } else {
     alert('All form fields must be filled in');
   }
-}
-
-function handleInput(event) {
-  const formData = {
-    email: form.elements.email.value.trim(),
-    message: form.elements.message.value.trim(),
-  };
-
-  const data = JSON.stringify(formData);
-  localStorage.setItem(storageKey, data);
 }
 
 const savedData = localStorage.getItem(storageKey) ?? '';
